@@ -1,0 +1,82 @@
+public class isPalindrome_LinkedList {
+
+	// Solution 1 : Reverse and Compare
+	// Solution 2 : Iterative Approach : fast & slow runners
+	// Solution 3 : Recursive Approach
+
+	
+	public class ListNode{
+		ListNode next = null;
+		int val;
+		
+		public ListNode(int d){
+			val =d;
+		}
+	}
+	
+	
+	// Solution 1 : Reverse and Compare : We can create a new list in reversed order and then compare each node. 
+	//				The time and space are O(n).
+	
+	public boolean isPalindrome_ReverseCompare(ListNode head) {
+		if(head == null)
+	        return true;
+		
+		ListNode p = head;
+	    ListNode prev = new ListNode(head.val); // new list for reversed order
+	    
+	    // Create a reversed order list : Reverse the pointers
+	    
+	    // Eg : 1-> 2 -> 3 -> 4 -> 5
+	    // p = 1
+	    // prev = 1
+	    
+	    // temp = 2 ( p = 2)
+	    // temp.next = 1
+	    // prev = 2
+	    // p = 3	
+	    
+	    // temp = 3
+	    // temp.next = 2
+	    // prev = 3 
+	    // p = 4
+	    
+	    // temp = 4
+	    // temp.next = 3
+	    // prev = 4
+	    // p = 5
+
+	    while(p.next != null){
+	        ListNode temp = new ListNode(p.next.val);
+	        temp.next = prev;
+	        prev = temp;
+	        p = p.next;
+	    }
+	    
+	    ListNode p1 = head; // original list
+	    ListNode p2 = prev; // reversed list
+	    
+	    while(p1!=null){
+	        if(p1.val != p2.val)
+	            return false;
+	 
+	        p1 = p1.next;
+	        p2 = p2.next;
+	    }
+		
+		return true;
+		
+	}
+	
+	
+	// Solution 2 : Iterative Approach : Using fast & slow pointers : Break and reverse second half
+	// 				We can use a fast and slow pointer to get the center of the list, then reverse the 
+	//				second list and compare two sublists. The time is O(n) and space is O(1).
+	
+	
+	
+	
+	
+	
+	
+}

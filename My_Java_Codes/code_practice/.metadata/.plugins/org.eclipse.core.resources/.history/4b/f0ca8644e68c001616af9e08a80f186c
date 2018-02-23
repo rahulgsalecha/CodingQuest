@@ -1,0 +1,41 @@
+
+public class BinaryTree {
+	public Node root;
+	BinaryTree tree = new BinaryTree();
+
+	public class Node {
+		int key;
+		Node left, right;
+		
+		Node(int value){
+			key = value;
+			left = right = null;
+		}
+	}
+	
+	public BinaryTree(int value){
+		root = new Node(value);
+	}
+	
+	public BinaryTree()
+    {
+        root = null;
+    }
+	
+	public static void main(String[] args)
+    {
+		
+		
+		/*create root*/
+        tree.root =new Node(1);
+ 
+        /* following is the tree after above statement
+ 
+              1
+            /   \
+          null  null     */
+		
+    }
+}
+
+

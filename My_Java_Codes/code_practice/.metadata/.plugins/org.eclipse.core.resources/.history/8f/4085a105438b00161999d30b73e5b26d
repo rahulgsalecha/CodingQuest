@@ -1,0 +1,54 @@
+
+// CTCI 1.4
+/* Write a method to replace all spaces in a string with'%20'. 
+ * You may assume that the string has sufficient space at the end 
+ * of the string to hold the additional characters, and that 
+ * you are given the "true" length of the string. 
+ * (Note: if imple­ menting in Java, please use a character array 
+ * so that you can perform this opera­ tion in place.)
+EX A M P L E
+Input: "Mr John Smith"
+Output: "Mr%20John%20Smith"
+*/
+public class ReplaceSpace {
+	
+	public static void replaceSpaces(String string , int length) {
+		int spaceCount=0;
+		int newLength, i;
+		
+		char[] string = str.toCharArray();
+		for( i=0; i < length; i++){
+			if(string[i] == ' '){
+				spaceCount++;
+			}
+		}
+		
+		newLength = length + spaceCount * 2;
+		
+		string[newLength] ='\0';
+		
+		for (i = length - 1; i >= 0; i--) {
+			if(string[i] == ' '){
+				string[newLength - 1] = '0';
+				string[newLength - 2] = '2';
+				string[newLength - 3] = '%';
+				newLength =newLength - 3;
+			} else {
+				string[newLength - 1] = string[i];
+				newLength =newLength - 1;
+			}
+		}
+		System.out.println("\n Replaced String :"+ string.toString());
+		
+	}
+		
+	public static void main(String[] args){
+		String str = "Mr John Smith";
+		
+		System.out.println("\n Original String :"+ str);
+		
+		replaceSpaces(str, str.length());
+		
+	}
+
+}

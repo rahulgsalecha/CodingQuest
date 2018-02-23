@@ -1,0 +1,21 @@
+
+public class SumOfTwoIntegers_PairsExists {
+	
+	public static void main(String[] args){
+		int[] arr1 = {5,3,6,7,8,1,-1,-2};
+		int sum = 10;
+		
+		mergeSort(arr1, 0, arr1.length-1);
+		
+		for(int i=0; i < arr1.length-1; i++){
+			if(binarySearch(arr1, sum - arr1[i])){
+				System.out.println("Pairs Exist for sum:"+ sum+" and they are : "+ arr1[i]+" & "+ (sum-arr1[i]));
+				return;
+			}
+		}
+		
+		System.out.println("Pairs Doesn't Exist for sum:"+ sum);
+		
+	}
+
+}

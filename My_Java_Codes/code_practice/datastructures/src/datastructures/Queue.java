@@ -1,0 +1,127 @@
+package datastructures;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+
+
+public class Queue<Item> implements Iterable<Item> {
+
+	private Node<Item> first;
+	private Node<Item> last;
+	private int N;
+	
+	private static class Node<Item>{
+		private Item item;
+		private Node<Item> next;
+		
+		public Node(){
+			item = null;
+		}
+		
+		public Node(Item data){
+	           this.item = data;
+	    }	
+	}
+	
+	public Queue(){
+		first = last = null;
+		N = 0;
+	}
+	
+	public boolean isEmpty() {
+		return first == null;
+	}
+	 
+	public int size(){
+		return N;
+	}
+	
+	public Item peek(){
+		if(isEmpty()) {
+			throw new NoSuchElementException("Queue underflow");
+		}
+		return first.item;
+	}
+	
+	public void enqueue(Item item){
+		if(isEmpty()) {
+			first = last;
+		}
+		Node<Item> newNode = new Node<Item>(item);	
+		newNode.next = null;
+		last = newNode;
+		N++;
+	}
+	
+	public Item dequeue(){
+		if (isEmpty()) {
+			throw new NoSuchElementException("Queue underflow");
+		}
+		
+		Item item = first.item;
+		first = first.next;
+		N--;
+		if (isEmpty()) {
+			last = null; 
+		}
+		return item;
+	}
+	
+	public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (Item item : this)
+            s.append(item + " ");
+        return s.toString();
+    } 
+	
+	public Iterator<Item> iterator() {
+		// TODO Auto-generated method stub
+		return new ListIterator<Item>(first);
+	}
+	
+	public class ListIterator<Item> implements Iterator<Item>{
+		private Node<Item> current;
+		
+		public ListIterator(Node<Item> first){
+			current=first;
+		}
+		
+		public boolean hasNext() {
+			return current!=null;
+		}
+
+		public Item next() {
+			if(!hasNext()) {
+				throw new NoSuchElementException();
+			}
+			Item item = current.item;
+			current = current.next;
+			return item;
+		}
+		
+		public void remove() {
+            throw new UnsupportedOperationException();
+        }
+		
+	}
+	
+	public static void main(String[] args) throws IOException {
+        Queue<String> q = new Queue<String>();
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        String str;
+        while ((str = in.readLine()) != null && str.length() != 0){
+            if (!str.equals("-")) {
+            	q.enqueue(str);
+            } else if (!q.isEmpty()) {
+            	System.out.println(q.dequeue() + " ");
+            }
+            
+        }
+		System.out.println("(" + q.size() + " left on stack)");
+    }
+
+}

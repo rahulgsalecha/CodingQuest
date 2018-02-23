@@ -1,0 +1,22 @@
+public class isPalindrome_LinkedList {
+
+	// Solution 1 : Reverse and Compare
+	// Solution 2 : Iterative Approach : fast & slow runners
+	// Solution 3 : Recursive Approach
+	
+	// Solution 1 : Reverse and Compare : We can create a new list in reversed order and then compare each node. 
+	//				The time and space are O(n).
+	
+	public class ListNode{
+		ListNode next = null;
+		int data;
+		
+		public ListNode(int d){
+			data =d;
+		}
+	}
+	public boolean isPalindrome(ListNode head) {
+		
+	}
+	
+}

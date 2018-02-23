@@ -1,0 +1,52 @@
+
+public class MyMergeSort {
+	
+	public static void main(String[] args){
+		int[] array = {5,3,6,7,8,1,-1,-2};
+		mergeSort(array,0,array.length - 1);
+		
+		for(int elem : array){
+			System.out.print(elem);
+			System.out.print(", ");
+		}
+	}
+
+	public static void mergeSort(int[] input, int p, int r){
+		if(p<r){
+			int q = (p+(r-p))/2;
+			mergeSort(input, p, q);
+			mergeSort(input, q+1, r);
+			merge(input,p, q, r);
+		}
+	}
+		
+	public static void merge(int[] array, int lowerIndex, int middle, int higherIndex){
+		
+		int[] tempMergArr = new int[array.length+1];
+		for (int i = lowerIndex; i <= higherIndex; i++) {
+            tempMergArr[i] = array[i];
+        }
+		
+        int i = lowerIndex;
+        int j = middle + 1;
+        int k = lowerIndex;
+        while (i <= middle && j <= higherIndex) {
+            if (tempMergArr[i] <= tempMergArr[j]) {
+                array[k] = tempMergArr[i];
+                i++;
+            } else {
+                array[k] = tempMergArr[j];
+                j++;
+            }
+            k++;
+        }
+        while (i <= middle) {
+            array[k] = tempMergArr[i];
+            k++;
+            i++;
+        }
+		
+	}
+		
+		
+}
