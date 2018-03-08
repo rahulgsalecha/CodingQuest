@@ -1,0 +1,50 @@
+Company			:	Question
+===================================================================================================================================				
+Uber			:	LRUCache
+WePay			:	Find if a string is a number
+Zscaler			:	Linked list child ordering
+Arista			:	Intersection of linked lists
+Arista			:	BST
+c3Iot			:	longest subsequence of a string with matching string
+c3Iot			:	check number of difference in prices
+gigster			:	calculate fees for parking lot
+gigster			:	elevator problem
+Uhana			:	num of bits in a BYTE and number of bits in BYTES
+Forward Networks:	Look for all ip addresses in a set that match a query ip address (including subnets),
+Addeppar		:	Implement HashMap in Java
+Pure Storage	:	Buddy bitmap
+Pure Storage	:	Event Handler
+Glint			:	find jumps linked list (valid paths) 
+Amazon			:	Most popular sequence of 3 page visits
+Facebook		:	Read4K function
+LinkedIn		:	valid perfect square 
+LinkedIn		:	deepest common ancestor
+Blippar			:	Countpairs less than equal to sum k
+Blippar			:	shuffle an array using rand function
+Google			:	Detect a broken binary tree
+Google			:	Remove nodes from BST if they are out of (min, max) range
+Google			:	parse log file and get a mapping of url vs number times status code is 404
+Google			:	In a filesystem ,find modified files
+Google			:	design system with a map 0f n nodes (links, hosts, etc) as input and (current status, etc) as output
+Google			:	System design (GET requests)
+Google			:	is Binary Tree a BST
+Google			:	Longest Matching Prefix Datastructure
+Google			:	Shuffle an array of n numbers and return number of permutations
+Google			:	Sort an unordered array
+Microsoft		:	Sort a stack
+Microsoft		:	Remove duplicates from linked list
+Microsoft		:	Fibonacci recursive
+Big Switch		:	DFS, 
+Big Switch		:	BST diameter
+Big Switch		:	firstoccurence in sorted array
+Big Switch		:	friends circle
+MobileIron		:	Multithreading implement ( Remove odd - even)
+Bloomberg		:	Intersection and Union of 2 linkedLists
+Bloomberg		:	Flatten multi level linked list
+Bloomberg		:	find missing element in n natural numbers
+Two Sigma		:	design a data structure to hold objects with a corresponding integer weight
+Yahoo			:	is BT a BST
+Atlassian		:	Given a list of transactions, How can we calculate the frequency counts of all possible item-sets?
+ThouandEyes		:	fibonacci series return as array.
+DrawBridge		:	find subarray indexes equals to a given sum
+Qualtrics		:	BST iterator implement
