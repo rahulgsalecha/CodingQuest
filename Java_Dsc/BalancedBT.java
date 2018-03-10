@@ -42,6 +42,27 @@ public class BalancedBT {
         return Math.max(left,right) + 1;
     }
 
+    public static boolean isBalancedBTSol2(BTNode root) {
+        return (isBalancedBTSol2iUtil(root) >= 0);
+    }
+
+    public static int isBalancedBTSol2iUtil(BTNode root) {
+        if(root == null) {
+            return 0;
+        }
+
+        int left = isBalancedBTSol2iUtil(root.left);
+        int right = isBalancedBTSol2iUtil(root.right);
+
+        if (left < 0 || right < 0 || Math.abs(left-right) > 1) {
+            return -1;
+        }
+
+        return Math.max(left,right)+1;
+    }
+
+
+
     public static void main(String args[])
     {
 
@@ -67,5 +88,24 @@ public class BalancedBT {
             System.out.println("Tree is balanced");
         else
             System.out.println("Tree is not balanced");
+
+        BTNode tree_sol2 = new BTNode(1);
+        tree_sol2.left = new BTNode(2);
+        tree_sol2.right = new BTNode(3);
+        tree_sol2.left.left = new BTNode(4);
+        tree_sol2.left.right = new BTNode(5);
+        tree_sol2.left.left.left = new BTNode(8);
+
+        BalancedBT tree_bt_sol2 = new BalancedBT();
+
+        if(tree_bt_sol2.isBalancedBTSol2(tree_sol2))
+           System.out.println("Tree is balanced");
+        else
+            System.out.println("Tree is not balanced");
     }
 }
+
+/* Output
+ * Tree is balanced
+ * Tree is not balanced
+ */
